@@ -18,13 +18,13 @@ function addWorker() {
     },
 {
     type: "list",
-    message: "Select worker's role.",
+    message: "Select worker's position.",
     choices: [
         "Manager",
         "Engineer",
         "Intern"
     ],
-    name: "role"
+    name: "position"
 },
 {
     message: "Input worker's ID.",
@@ -34,4 +34,16 @@ function addWorker() {
     message: "Input worker's email address.",
     name: "email"
 }])
+
+.then(function({name, position, ID, email}){
+    let positionInfo = "";
+    if (positionInfo === "Engineer") {
+        positionInfo = "GitHub name";
+    } else if(positionInfo = "Intern") {
+        positionInfo = "finished school";
+    } else {
+        positionInfo = "Office Phone#";
+    }
+    
+})
 }
