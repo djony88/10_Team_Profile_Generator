@@ -13,7 +13,7 @@ function startApp() {
 
 function addWorker() {
     inquirer.prompt([{
-        message: "Enter worker's name.",
+        message: "Input worker's name.",
         name: "name"
     },
 {
@@ -26,5 +26,12 @@ function addWorker() {
     ],
     name: "role"
 },
-])
+{
+    message: "Input worker's ID.",
+    name: "ID"
+},
+{
+    message: "Input worker's email address.",
+    name: "email"
+}])
 }
