@@ -8,7 +8,7 @@ const Intern = require();
 const workers = [];
 
 
-function startApp() {
+function initTeamApp() {
     createHTML();
     addWorker();
 }
@@ -85,7 +85,7 @@ inquirer.prompt([{
 });
 }
 
-function startHTML() {
+function createHTML() {
     const HTML = `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -166,9 +166,21 @@ function addHTML(worker) {
     });
 }
 
+function finishHTML() {
+    const HTML = `</div>
+    </div> 
 
-    </div>
     </body>
-    
-    `
+    </html>`
+
+fs.appendFile("./output/team_app.html", html, function(err) {
+    if(err) {
+        console.log(err);
+    };
+});
+
+console.log("end");
+
 }
+
+initTeamApp;
