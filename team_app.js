@@ -5,6 +5,8 @@ const Manager = require();
 const Engineer = require();
 const Intern = require();
 
+const workers = [];
+
 
 function startApp() {
     createHTML();
@@ -57,7 +59,7 @@ inquirer.prompt([{
         "yes",
         "no"
     ],
-    name: "moreWorkers"
+    name: "additionalWorkers"
 }])
 
 .then(function({positionInfo, moreWorkers}){
@@ -69,8 +71,16 @@ inquirer.prompt([{
     } else {
         newWorker = new Manager(name, positionInfo, ID, email);
     }
-    
-})
+    workers.push(newWorker);
+    addHTML(newWorker)
+    .then(function() {
+        if (additionalWorkers === "yes") {
+            addWorker();
+        } else {
+            finishHTML();
+        }
+    });
+});
 
-})
+});
 }
