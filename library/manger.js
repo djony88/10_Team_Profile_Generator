@@ -1,4 +1,4 @@
-const worker = require("./");
+const worker = require("./Worker");
 
 class Manager extends {
     constructor (name, ID, officeNum, email) {

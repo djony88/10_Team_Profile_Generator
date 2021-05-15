@@ -1,4 +1,4 @@
-const worker = require("./");
+const worker = require("./Worker");
 
 class Engineer extends {
     constructor (name, ID, GitHub, email) {
@@ -11,6 +11,6 @@ class Engineer extends {
     getGitHub() {
         return this.GitHub;
     }
-},
+}
 
 module.exports = Engineer;
