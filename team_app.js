@@ -110,9 +110,64 @@ function startHTML() {
     console.log("start");
 
 }
-    
+
+function addHTML(worker) {
+    return new Promise(function(resolve, reject) {
+        const name = worker.getName();
+        const position = worker.getPosition();
+        const ID = worker.getID();
+        const email = worker.getEmail();
+        let data = "";
+        if (position === "Engineer") {
+            const GitHub = worker.getGitHub();
+            data = `<div class="col-6">
+            <div class="card mx-auto mb-3" style="width: 20rem">
+            <h5 class="card-header">Engineer<br /><br />${name}</h5>
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${ID}</li>
+                <li class="list-group-item">Email: ${email}</li>
+                <li class="list-group-item">GitHub: ${GitHub}</li>
+            </ul>
+            </div>
+        </div>`
+        } else if (position === "Intern") {
+            const school = worker.getSchool();
+            data = `<div class="col-6">
+            <div class="card mx-auto mb-3" style="width: 20rem">
+            <h5 class="card-header">Intern<br /><br />${name}</h5>
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${ID}</li>
+                <li class="list-group-item">Email: ${email}</li>
+                <li class="list-group-item">School: ${school}</li>
+            </ul>
+            </div>
+        </div>`;
+        } else {
+            const phoneNumber = worker.getPhoneNumber();
+            data = `<div class="col-6">
+            <div class="card mx-auto mb-3" style="width: 20rem">
+            <h5 class="card-header">Manager<br /><br />${name}</h5>
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${ID}</li>
+                <li class="list-group-item">Email: ${email}</li>
+                <li class="list-group-item">Phone Number: ${phoneNumber}</li>
+            </ul>
+            </div>
+        </div>`
+        }
+
+        console.log("Adding worker.");
+        fs.appendFile("./output/team_app.html", data, function(err){
+            if (err) {
+                return refuse(err);
+            };
+            return resolve();
+        });
+    });
+}
+
+
     </div>
-    
     </body>
     
     `
