@@ -45,5 +45,32 @@ function addWorker() {
         positionInfo = "Office Phone#";
     }
     
+
+inquirer.prompt([{
+    message: `Input worker's ${positionInfo}`,
+    name: "positionInfo"
+},
+{
+    type: "list",
+    message: "Would you like to add more worker's?",
+    choices: [
+        "yes",
+        "no"
+    ],
+    name: "moreWorkers"
+}])
+
+.then(function({positionInfo, moreWorkers}){
+    let newWorker;
+    if(position === "Engineer") {
+        newWorker = new Engineer(name, positionInfo, ID, email);
+    } else if (position === "Intern") {
+        newWorker = new Intern(name, positionInfo, ID, email);
+    } else {
+        newWorker = new Manager(name, positionInfo, ID, email);
+    }
+    
+})
+
 })
 }
