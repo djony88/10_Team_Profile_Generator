@@ -15,3 +15,5 @@ Requirements:
 * If I select engineer I get to input name, ID, Github username and email.
 * After that I can select intern option to input intern's name, ID, school and email.
 * When it is selected to finish the app HTML file is created.
+
+![Screenshot](./10_Team_Profile_Generator/img/TeamApp.png)
