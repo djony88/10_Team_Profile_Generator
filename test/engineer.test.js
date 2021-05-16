@@ -1,19 +1,19 @@
-const engineer = require("..//library/engineer");
+const Engineer = require("..//library/engineer");
 
 test("can set GitHub", () => {
     const value = "GitHub";
-    const e = new engineer("New", 1, "engineer@test.com", value);
+    const e = new Engineer("New", 1, "GitHub", value);
     expect(e.GitHub).toBe(value);
 });
 
 test("getPosition() should return \"engineer\"", () => {
-    const value = "engineer";
-    const e = new engineer("New", 1, "engineer@test.com", "GitHub");
+    const value = "Engineer";
+    const e = new Engineer("New", 1, "engineer@test.com", value);
     expect(e.getPosition()).toBe(value);
 });
 
 test("Get GitHub user name", () => {
     const value = "GitHubProfile";
-    const e = new engineer("New", 1, "engineer@test.com", value);
+    const e = new Engineer("New", 1, "GitHubProfile", value);
     expect(e.getGitHub()).toBe(value);
 });

@@ -1,7 +1,7 @@
 
-const worker = requre("../library/worker");
+const worker = require ("../library/worker");
 
-discribe("worker", () => {
+describe("worker", () => {
     it("Can detect worker", () => {
         const e = new worker();
         expect(typeof(e)).toBe("object");
@@ -16,28 +16,29 @@ discribe("worker", () => {
     it("can set id", () => {
         const value = 100;
         const e = new worker("New", value);
-        expect(e.id).toBE(value);
+        expect(e.getID()).toBe(value);
     });
 
     it("can set email", () => {
         const value = "nikola@test.com";
         const e = new worker("New", 1, value);
-        expect(e.email).toBE(value);
+        expect(e.getEmail()).toBe(value);
     });
+});
 
     describe("getName", () => {
         it("can get name via getName()", () => {
             const value = "Nikola";
             const e = new worker(value);
-            expect(e.getName).toBe(value);
+            expect(e.getName()).toBe(value);
         });
     });
 
     describe("getId", () => {
         it("can get id via getId()", () => {
             const value = 100;
-            const e = new worker("New", value);
-            expect(e.getId).toBe(value);
+            const e = new worker("New", 100);
+            expect(e.getID()).toBe(value);
         });
     });
 
@@ -45,7 +46,7 @@ discribe("worker", () => {
         it("can get email via getEmail()", () => {
             const value = "nikola@test.com";
             const e = new worker("New", 1, value);
-            expect(e.getEmail).toBe(value);
+            expect(e.getEmail()).toBe(value);
         });
     });
 
@@ -53,7 +54,6 @@ discribe("worker", () => {
         it("getPosition() should return \"worker\"", () => {
             const value = "worker";
             const e = new worker("Nikola", 1, "nikola@test.com");
-            expect(e.getPosition).toBe(value);
+            expect(e.getPosition()).toBe(value);
         });
     });
-});

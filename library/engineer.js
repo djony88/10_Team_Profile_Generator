@@ -6,7 +6,7 @@ class engineer extends worker {
         this.GitHub = GitHub;
     }
     getPosition() {
-        return "Manager";
+        return "Engineer";
     }
     getGitHub() {
         return this.GitHub;
