@@ -22,4 +22,4 @@ class worker {
     }
 }
 
-module.exporst = worker;
+module.exports = worker;
