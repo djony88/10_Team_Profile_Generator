@@ -101,7 +101,7 @@ function createHTML() {
         </nav>
         <div class = "container"> 
             <div class="row">`;
-    fs.writeFile("./output/team_app.html", HTML, function(err) {
+    fs.writeFile("./output/TeamApp.html", HTML, function(err) {
         if (err) {
             console.log(err);
         }
@@ -157,7 +157,7 @@ function addHTML(worker) {
         }
 
         console.log("Adding worker.");
-        fs.appendFile("./output/team_app.html", data, function(err){
+        fs.appendFile("./output/TeamApp.html", data, function(err){
             if (err) {
                 return refuse(err);
             };
@@ -173,7 +173,7 @@ function finishHTML() {
     </body>
     </html>`
 
-fs.appendFile("./output/team_app.html", HTML, function(err) {
+fs.appendFile("./output/TeamApp.html", HTML, function(err) {
     if(err) {
         console.log(err);
     };
