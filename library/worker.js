@@ -1,7 +1,7 @@
-class Worker {
-    constructor (name, ID, email) {
+class worker {
+    constructor (name, id, email) {
         this.name = name;
-        this.ID = ID;
+        this.id = id;
         this.email = email;
     }
 
@@ -10,7 +10,7 @@ class Worker {
     }
 
     getID() {
-        return this.ID;
+        return this.id;
     }
 
     getEmail() {
@@ -18,8 +18,8 @@ class Worker {
     }
 
     getPosition() {
-        return "Worker";
+        return "worker";
     }
 }
 
-module.exporst = Worker;
+module.exporst = worker;

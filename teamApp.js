@@ -1,11 +1,11 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const Manager = require();
-const Engineer = require();
-const Intern = require();
+const Manager = require("./library/manger");
+const Engineer = require("./library/engineer");
+const Intern = require("./library/intern");
 
-const workers = [];
+const worker = [];
 
 
 function initTeamApp() {
@@ -59,10 +59,10 @@ inquirer.prompt([{
         "yes",
         "no"
     ],
-    name: "additionalWorkers"
+    name: "additionalWorker"
 }])
 
-.then(function({positionInfo, additionalWorkers}){
+.then(function({positionInfo, additionalWorker}){
     let newWorker;
     if(position === "Engineer") {
         newWorker = new Engineer(name, positionInfo, id, email);
@@ -71,10 +71,10 @@ inquirer.prompt([{
     } else {
         newWorker = new Manager(name, positionInfo, id, email);
     }
-    workers.push(newWorker);
+    worker.push(newWorker);
     addHTML(newWorker)
     .then(function() {
-        if (additionalWorkers === "yes") {
+        if (additionalWorker === "yes") {
             addWorker();
         } else {
             finishHTML();

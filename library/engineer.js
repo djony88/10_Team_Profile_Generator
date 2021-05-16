@@ -1,8 +1,8 @@
-const Worker = require("./Worker");
+const worker = require("./worker");
 
-class Engineer extends Worker{
-    constructor (name, ID, GitHub, email) {
-        super (name, ID, email);
+class engineer extends worker {
+    constructor (name, id, GitHub, email) {
+        super (name, id, email);
         this.GitHub = GitHub;
     }
     getPosition() {
@@ -13,4 +13,4 @@ class Engineer extends Worker{
     }
 }
 
-module.exports = Engineer;
+module.exports = engineer;
