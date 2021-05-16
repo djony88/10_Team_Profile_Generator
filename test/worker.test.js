@@ -10,7 +10,7 @@ describe("worker", () => {
     it("can set a name", () => {
         const name = "Nikola";
         const e = new worker(name);
-        expect(e.name).toBe(name);
+        expect(e.getName()).toBe(name);
     });
 
     it("can set id", () => {

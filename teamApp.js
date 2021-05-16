@@ -54,7 +54,7 @@ inquirer.prompt([{
 },
 {
     type: "list",
-    message: "Would you like to add more worker's?",
+    message: "Would you like to add more workers?",
     choices: [
         "yes",
         "no"
@@ -143,14 +143,14 @@ function addHTML(worker) {
             </div>
         </div>`;
         } else {
-            const phoneNumber = worker.getPhoneNumber();
+            const officeNumber = worker.officeNumber();
             data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 20rem">
             <h5 class="card-header">Manager<br /><br />${name}</h5>
             <ul class="list-group">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email: ${email}</li>
-                <li class="list-group-item">Phone Number: ${phoneNumber}</li>
+                <li class="list-group-item">Phone Number: ${officeNumber}</li>
             </ul>
             </div>
         </div>`
@@ -159,7 +159,7 @@ function addHTML(worker) {
         console.log("Adding worker.");
         fs.appendFile("./output/TeamApp.html", data, function(err){
             if (err) {
-                return refuse(err);
+                return reject(err);
             };
             return resolve();
         });
