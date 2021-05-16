@@ -13,7 +13,7 @@ function initTeamApp() {
     addWorker();
 }
 
-function addWorker() {
+// function addWorker() {
     inquirer.prompt([{
         message: "Input worker's name.",
         name: "name"
@@ -35,9 +35,8 @@ function addWorker() {
 {
     message: "Input worker's email address.",
     name: "email"
-}])
-
-.then(function({name, position, id, email}){
+},
+]).then(function({name, position, id, email}){
     let positionInfo = "";
     if (positionInfo === "Engineer") {
         positionInfo = "GitHub name";
@@ -60,19 +59,18 @@ inquirer.prompt([{
         "no"
     ],
     name: "additionalWorker"
-}])
-
-.then(function({positionInfo, additionalWorker}){
-    let newWorker;
+}
+]).then(function({positionInfo, additionalWorker}) {
+    let addWorker;
     if(position === "Engineer") {
-        newWorker = new Engineer(name, positionInfo, id, email);
+        addWorker = new Engineer(name, positionInfo, id, email);
     } else if (position === "Intern") {
-        newWorker = new Intern(name, positionInfo, id, email);
+        addWorker = new Intern(name, positionInfo, id, email);
     } else {
-        newWorker = new Manager(name, positionInfo, id, email);
+        addWorker = new Manager(name, positionInfo, id, email);
     }
-    worker.push(newWorker);
-    addHTML(newWorker)
+    worker.push(addWorker);
+    addHTML(addWorker)
     .then(function() {
         if (additionalWorker === "yes") {
             addWorker();
@@ -83,7 +81,7 @@ inquirer.prompt([{
 });
 
 });
-}
+// }
 
 function createHTML() {
     const HTML = `<!DOCTYPE html>
@@ -143,7 +141,7 @@ function addHTML(worker) {
             </div>
         </div>`;
         } else {
-            const officeNumber = worker.officeNumber();
+            const officeNumber = worker.getOfficeNumber();
             data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 20rem">
             <h5 class="card-header">Manager<br /><br />${name}</h5>
