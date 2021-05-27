@@ -4,6 +4,8 @@ UCSD-SD-FSF-PT-03-2021-U-C-MW
 
 [GitHub link](https://github.com/djony88/10_Team_Profile_Generator)
 
+[Video Link](https://drive.google.com/file/d/1C1VO8NkFhqL7u-HHikLEI4lGUVys8Fpl/view)
+
 Requirements:
 
 * Create Team basic info with quick access to emails and GitHub profiles.
@@ -16,4 +18,4 @@ Requirements:
 * After that I can select intern option to input intern's name, ID, school and email.
 * When it is selected to finish the app HTML file is created.
 
-![Screenshot](./10_Team_Profile_Generator/img/TeamApp.png)
+![Screenshot](./img/TeamApp.png)

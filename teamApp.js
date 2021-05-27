@@ -13,7 +13,7 @@ function initTeamApp() {
     addWorker();
 }
 
-// function addWorker() {
+function addWorker() {
     inquirer.prompt([{
         message: "Input worker's name.",
         name: "name"
@@ -61,16 +61,16 @@ inquirer.prompt([{
     name: "additionalWorker"
 }
 ]).then(function({positionInfo, additionalWorker}) {
-    let addWorker;
+    let addEmployee;
     if(position === "Engineer") {
-        addWorker = new Engineer(name, positionInfo, id, email);
+        addEmployee = new Engineer(name, positionInfo, id, email);
     } else if (position === "Intern") {
-        addWorker = new Intern(name, positionInfo, id, email);
+        addEmployee = new Intern(name, positionInfo, id, email);
     } else {
-        addWorker = new Manager(name, positionInfo, id, email);
+        addEmployee = new Manager(name, positionInfo, id, email);
     }
-    worker.push(addWorker);
-    addHTML(addWorker)
+    worker.push(addEmployee);
+    addHTML(addEmployee)
     .then(function() {
         if (additionalWorker === "yes") {
             addWorker();
@@ -81,7 +81,7 @@ inquirer.prompt([{
 });
 
 });
-// }
+}
 
 function createHTML() {
     const HTML = `<!DOCTYPE html>
@@ -181,4 +181,4 @@ console.log("end");
 
 }
 
-initTeamApp;
+initTeamApp();
